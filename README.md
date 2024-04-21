@@ -8,10 +8,7 @@
 
 ImgAdapter에서 interface OnSwitchStateChangeListener 안에<br>
 메서드 onSwitchStateChanged 를 이용해서 <br>
-메인화면 SearchImgFragment.kt 에서 메서드 onSwitchStateChanged를 재정의해서<br>
-<br><br>
-val item = imageResultAdapter.currentList[position] // 현재데이터  <br>
-val bookmarkedItems = sharedViewModel.bookmarkedItems.value ?: emptyList() <br> // 북마크된 데이터
+메인화면 SearchImgFragment.kt 에서 메서드 onSwitchStateChanged를 오버라이드함 <br>
 
 
 if(isBookmarked){//이미 찜되어있으면  
