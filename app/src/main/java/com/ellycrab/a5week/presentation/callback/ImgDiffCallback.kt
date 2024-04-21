@@ -1,4 +1,4 @@
-package com.ellycrab.a5week.presentation.callbackDiff
+package com.ellycrab.a5week.presentation.callback
 
 import androidx.recyclerview.widget.DiffUtil
 import com.ellycrab.a5week.presentation.search.model.img.ImageDocumentEntity

@@ -12,7 +12,7 @@ object RetrofitaImgClient {
 
     private val okHttpClient by lazy {
         OkHttpClient.Builder()
-            .addInterceptor(AuthorizationInterceptor("카카오 restapi키 입력"))
+            .addInterceptor(AuthorizationInterceptor("33f58a29004a5deccc24da94cfef4b1e"))
             .build()
     }
 

@@ -18,16 +18,9 @@ import com.ellycrab.a5week.presentation.search.SharedViewModel
 
 class SearchImgFragment : Fragment(),ImgAdapter.OnSwitchStateChangeListener {
 
-    val sharedViewModel:SharedViewModel by activityViewModels()
+    private val sharedViewModel:SharedViewModel by activityViewModels()
 
-    override fun onSwitchStateChanged(position: Int, isChecked: Boolean) {
-        if(isChecked){
-            val itemToBookmark = imageResultAdapter.currentList[position]
 
-            sharedViewModel.bookmarkedItems.value = sharedViewModel.bookmarkedItems
-                .value?.plus(itemToBookmark) ?: listOf(itemToBookmark)
-        }
-    }
 
     private val binding by lazy { FragmentSearchImgBinding.inflate(layoutInflater) }
 
@@ -75,6 +68,26 @@ class SearchImgFragment : Fragment(),ImgAdapter.OnSwitchStateChangeListener {
         val searchQuery = binding.imgSearch.text.toString()
 
         viewModel.onSearch(searchQuery)
+    }
+
+    //스위치가 켜졌을 때 해당 항목을 북마크에 추가하거나 스위치가 꺼졌을때 해당 항목을 북마크에서 제거
+    override fun onSwitchStateChanged(position: Int, isChecked: Boolean) {
+
+        val item = imageResultAdapter.currentList[position]
+        val bookmarkedItems = sharedViewModel.bookmarkedItems.value ?: emptyList()
+
+        //아이템이 이미 북마크됬는지 체크
+        val isBookmarked = bookmarkedItems.contains(item)
+
+        if(isBookmarked){//이미 찜되어있으면
+            //북마크에서 제거
+            val updatedBookmarkedItems = bookmarkedItems - item
+            sharedViewModel.bookmarkedItems.value = updatedBookmarkedItems
+        }else{//찜되지 않았으면
+            //북마크에 추가
+            val updatedBookmarkedItems = bookmarkedItems + item
+            sharedViewModel.bookmarkedItems.value = updatedBookmarkedItems
+        }
     }
 
 }

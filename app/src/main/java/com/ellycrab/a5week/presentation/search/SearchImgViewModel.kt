@@ -40,7 +40,11 @@ class SearchImgViewModel(
     }
 }
 
-
+/*
+SearchImgViewModelFactory를 제공하여
+의존성 주입을 수행. 이는 ViewModel의 생성시점에
+필요한 의존성을 제공하는 데 사용됨
+ */
 class SearchImgViewModelFactory : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(
