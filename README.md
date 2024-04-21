@@ -4,7 +4,7 @@
 <br>
 
 
-![제목 없는 디자인 (2)](https://github.com/ellycrab/challengeHomework/assets/54714275/89524bd9-e116-4b5b-abc1-0d593dfded7d)  <br>
+![제목 없는 디자인 (2)](https://github.com/ellycrab/challengeHomework/assets/54714275/89524bd9-e116-4b5b-abc1-0d593dfded7d)  <br><br><br>
 
 ImgAdapter에서 interface OnSwitchStateChangeListener 안에<br>
 메서드 onSwitchStateChanged 를 이용해서 <br>
