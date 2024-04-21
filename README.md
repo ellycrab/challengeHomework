@@ -4,14 +4,26 @@
 <br>
 
 
-[![제목 없는 디자인 (2)](https://github.com/ellycrab/challengeHomework/assets/54714275/6c322585-b922-4349-9a4a-b017e2c23a59)](https://www.youtube.com/shorts/RwMFpWfWA-s)
+![제목 없는 디자인 (2)](https://github.com/ellycrab/challengeHomework/assets/54714275/89524bd9-e116-4b5b-abc1-0d593dfded7d)  <br>
+
+ImgAdapter에서 interface OnSwitchStateChangeListener 안에<br>
+메서드 onSwitchStateChanged 를 이용해서 <br>
+메인화면 SearchImgFragment.kt 에서 메서드 onSwitchStateChanged를 재정의해서<br>
+<br><br>
+val item = imageResultAdapter.currentList[position] // 현재데이터  <br>
+val bookmarkedItems = sharedViewModel.bookmarkedItems.value ?: emptyList() <br> // 북마크된 데이터
 
 
-
+if(isBookmarked){//이미 찜되어있으면  
+            //북마크에서 제거
+            val updatedBookmarkedItems = bookmarkedItems - item
+            sharedViewModel.bookmarkedItems.value = updatedBookmarkedItems
+        }else{//찜되지 않았으면
+            //북마크에 추가
+            val updatedBookmarkedItems = bookmarkedItems + item
+            sharedViewModel.bookmarkedItems.value = updatedBookmarkedItems
+        }
 <br>
-
-
-
 
 [SearchImgFragment.kt]
 
