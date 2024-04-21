@@ -10,21 +10,7 @@ ImgAdapter에서 interface OnSwitchStateChangeListener 안에<br>
 메서드 onSwitchStateChanged 를 이용해서 <br>
 메인화면 SearchImgFragment.kt 에서 메서드 onSwitchStateChanged를 오버라이드함 <br>
 
-//이미 찜되어있으면  <br>
-if(isBookmarked){ <br>
-            //북마크에서 제거
-            val updatedBookmarkedItems = bookmarkedItems - item <br>
-            sharedViewModel.bookmarkedItems.value = updatedBookmarkedItems
-            //찜되지 않았으면<br>
-        }else{
-            //북마크에 추가
-            val updatedBookmarkedItems = bookmarkedItems + item
-            sharedViewModel.bookmarkedItems.value = updatedBookmarkedItems
-        }
-<br>
-
-[SearchImgFragment.kt]
-
+<br><br>
 
 override fun onSwitchStateChanged(position: Int, isChecked: Boolean) {
 
