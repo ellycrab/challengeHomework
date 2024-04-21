@@ -4,8 +4,8 @@
 <br>
 
 
+![제목 없는 디자인 (2)](https://github.com/ellycrab/challengeHomework/assets/54714275/6c322585-b922-4349-9a4a-b017e2c23a59)
 
-https://www.youtube.com/shorts/RwMFpWfWA-s
 
 
 <br>
