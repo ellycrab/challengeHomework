@@ -3,6 +3,10 @@ package com.ellycrab.a5week.presentation.search.model.img
 import com.ellycrab.a5week.data.model.img.ImageDocumentResponse
 import com.ellycrab.a5week.data.model.img.MetaResponse
 import com.ellycrab.a5week.data.model.img.SearchImageResponse
+/*
+어댑터 또는 매퍼 레이어는 애플리케이션의 여러 레이어 간에 데이터를 변환하는 역할을 한다.
+여기가 데이터 모델과 프리젠테이션 계층 데이터 클래스 사이의 격차를 해소하는 곳
+ */
 
 fun SearchImageResponse.toEntity() = SearchImageEntity(
     meta = meta?.toEntity(),

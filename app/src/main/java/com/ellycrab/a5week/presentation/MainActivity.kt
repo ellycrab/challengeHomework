@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ellycrab.a5week.databinding.ActivityMainBinding
 import com.ellycrab.a5week.presentation.search.SearchImgActivity
-import com.ellycrab.a5week.presentation.search.SearchVideoActivity
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
@@ -20,10 +19,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
-            videoBtn.setOnClickListener {
-                val intent = Intent(this@MainActivity,SearchVideoActivity::class.java)
-                startActivity(intent)
-            }
+//            videoBtn.setOnClickListener {
+//                val intent = Intent(this@MainActivity,SearchVideoActivity::class.java)
+//                startActivity(intent)
+//            }
         }
     }
 }
