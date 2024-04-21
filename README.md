@@ -1,4 +1,4 @@
-북마크 전까지 완료
+##북마크 전까지 완료
 
 
 <br>
@@ -10,4 +10,26 @@
 <br>
 
 
-![image](https://github.com/ellycrab/challengeHomework/assets/54714275/505b2646-75e9-44f3-873e-638efc210e2a)
+
+
+[SearchImgFragment.kt]
+
+
+override fun onSwitchStateChanged(position: Int, isChecked: Boolean) {
+
+        val item = imageResultAdapter.currentList[position]
+        val bookmarkedItems = sharedViewModel.bookmarkedItems.value ?: emptyList()
+
+        //아이템이 이미 북마크됬는지 체크
+        val isBookmarked = bookmarkedItems.contains(item)
+
+        if(isBookmarked){//이미 찜되어있으면
+            //북마크에서 제거
+            val updatedBookmarkedItems = bookmarkedItems - item
+            sharedViewModel.bookmarkedItems.value = updatedBookmarkedItems
+        }else{//찜되지 않았으면
+            //북마크에 추가
+            val updatedBookmarkedItems = bookmarkedItems + item
+            sharedViewModel.bookmarkedItems.value = updatedBookmarkedItems
+        }
+    }
